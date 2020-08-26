@@ -7,11 +7,18 @@ Esse é o repositorio do curso de Mensageria com RabbitMQ da Facef.
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
 microk8s helm3 install rabbitmq stable/rabbitmq
+echo "Password      : $(kubectl get secret --namespace default rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode)"
 
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-11-jdk maven
+brew cask install adoptopenjdk11
+brew install maven
+choco install jdk11 maven
+
 
 java -version
 javac -version
+
+mvn spring-boot:run
 
 ```
 ### Links
@@ -24,3 +31,6 @@ javac -version
 - https://www.rabbitmq.com/
 - https://redis.io/topics/pubsub
 - https://nats.io/
+- https://maven.apache.org/install.html
+- https://chocolatey.org/install
+- https://brew.sh/index_pt-br
