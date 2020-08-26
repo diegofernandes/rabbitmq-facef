@@ -27,7 +27,7 @@ public class Runner implements CommandLineRunner {
 			builder.append("e".repeat(i));
 			builder.append("-").append(i);
 
-			rabbitTemplate.convertAndSend(HellEmitterApplication.queueName, builder.toString());
+			rabbitTemplate.convertAndSend("fofoqueiro","foca" + i, builder.toString());
 
 			logger.info("Mensagem '"+builder.toString()+"' enviada " + i);
 
