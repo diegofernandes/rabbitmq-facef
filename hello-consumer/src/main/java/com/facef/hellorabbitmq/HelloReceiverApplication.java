@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class HelloReceiverApplication {
 	
 
-	@Value(value = "${queueName}")
+	@Value(value = "${queueName:leo}")
 	private String queueName;
 
 	
